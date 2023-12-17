@@ -50,3 +50,28 @@ def file():
     arr = pd.array([[a,b,c]])
     return quadratic(arr)
 file()
+
+import matplotlib.pyplot as plt
+def quadratic_solution(a, b, c, x):
+    y = a * x**2 + b * x + c
+    return y
+def temptime(a, b, c, time_line):
+    time = np.array(time_line)
+    temperature = quadratic_solution(a, b, c, time)
+
+    plt.plot(time, temperature)
+    plt.title("Temp")
+    plt.xlabel("Time")
+    plt.ylabel("Temperature")
+    plt.show()
+def show():
+    p = int(input("a:"))
+    q = int(input("b:"))
+    r = int(input("c:"))
+    
+    time_line = np.linspace(0, 5, 10)
+    
+
+    temptime(p,q,r, time_line)
+    
+show()
